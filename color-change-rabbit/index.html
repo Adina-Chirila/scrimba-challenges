@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
+		<title>Color change rabbit</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="rabbit">
+				<div class="ears">
+					<div class="ear">
+						<div class="inner-ear"></div>
+					</div>
+					<div class="ear">
+						<div class="inner-ear"></div>
+					</div>
+				</div>
+				<div class="head">
+					<div class="eyes">
+						<div class="eye">
+							<div class="eye-ball"></div>
+						</div>
+						<div class="eye">
+							<div class="eye-ball"></div>
+						</div>
+					</div>
+					<div class="nose-and-mouth">
+						<div class="nose"></div>
+						<div class="mouth">
+							<div class="mouth-part left"></div>
+							<div class="mouth-part right"></div>
+						</div>
+					</div>
+				</div>
+				<div class="body">
+					<div class="hands">
+						<div class="hand"></div>
+						<div class="hand"></div>
+					</div>
+
+					<div class="legs">
+						<div class="leg left-leg"></div>
+						<div class="leg right-leg"></div>
+					</div>
+				</div>
+			</div>
+			<div class="color-picker">
+				<h3>Personalize your rabbit</h3>
+				<label
+					>Eyes <input type="color" id="eyes-input" value="#000000"
+				/></label>
+				<label
+					>Body <input type="color" id="body-input" value="#bbb8bb"
+				/></label>
+				<label
+					>Ears and legs
+					<input type="color" id="ears-and-legs-input" value="#ffffff"
+				/></label>
+				<button id="surprise-btn">Surprise!</button>
+			</div>
+		</div>
+	</body>
+</html>
