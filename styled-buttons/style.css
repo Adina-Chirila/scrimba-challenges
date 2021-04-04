@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+:root {
+	--success-color: #46d189;
+	--darked-success-color: #269158;
+	--danger-color: rgb(253, 114, 114);
+	--darked-danger-color: rgb(245, 47, 47);
+	--light-color: white;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+}
+
+.submit-wrapper,
+.cancel-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	position: relative;
+	/* width: 100vh; */
+	border: 1px solid var(--light-color);
+}
+
+.submit-wrapper {
+	background-color: var(--success-color);
+}
+
+.cancel-wrapper {
+	background-color: var(--danger-color);
+}
+
+.btn {
+	background-color: inherit;
+	color: var(--light-color);
+	font-size: 1.5rem;
+	padding: 0.5em 1em;
+	border: 2px solid var(--light-color);
+	border-radius: 0.5em;
+	letter-spacing: 2px;
+	box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+	transition: all 0.3s ease-in-out 0s;
+	cursor: pointer;
+}
+
+.btn:focus {
+	outline: none;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+	background-color: var(--darked-success-color);
+}
+
+.cancel-btn:hover,
+.cancel-btn:focus {
+	background-color: var(--darked-danger-color);
+}
+
+.message {
+	display: none;
+	color: var(--light-color);
+	font-size: 2rem;
+	font-weight: 100;
+	margin-top: 1em;
+	text-align: center;
+	letter-spacing: 3px;
+	position: absolute;
+	top: 60%;
+	animation: show 0.7s ease-out 2s both;
+}
+
+.circle {
+	display: none;
+	width: 160px;
+	height: 160px;
+	fill: none;
+	stroke-width: 10px;
+	stroke-linecap: round;
+	stroke-dasharray: 410;
+	stroke-dashoffset: 410;
+	transform: rotate(280deg);
+	animation: circle 1.5s ease-out 0.5s both, fill 0.5s ease-out 1.7s forwards;
+	cursor: pointer;
+}
+
+.submit-circle {
+	stroke: var(--darked-success-color);
+}
+
+.cancel-circle {
+	stroke: var(--darked-danger-color);
+}
+
+.icon {
+	font-size: 5rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	animation: show 0.7s ease-out 2.2s both;
+	display: none;
+	pointer-events: none;
+}
+
+.check-icon {
+	color: var(--darked-success-color);
+}
+
+.cancel-icon {
+	color: var(--darked-danger-color);
+}
+
+@keyframes circle {
+	0% {
+		stroke-dashoffset: 410;
+	}
+	100% {
+		stroke-dasharray: 820;
+	}
+}
+
+@keyframes show {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fill {
+	0% {
+		fill: transparent;
+		stroke: white;
+	}
+
+	100% {
+		fill: var(--light-color);
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	body {
+		flex-direction: column;
+	}
+	.message {
+		top: 65%;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.message {
+		font-size: 1.3rem;
+		top: 70%;
+	}
+}
