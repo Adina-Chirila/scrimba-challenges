@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
 		<title>Form</title>
 	</head>
 	<body>
@@ -12,19 +13,39 @@
 			<div class="hero-container">
 				<img src="./hero.svg" alt="" />
 			</div>
-			<form action="">
+			<div class="success-box">
+				<p class="account-name">Welcome <span></span>!</p>
+				<p>Your Signed up successfully!</p>
+				<p class="account-email">
+					Please verify your email to confirm your account.
+				</p>
+			</div>
+			<form action="" autocomplete="off">
 				<div class="input-wrapper">
-					<input type="text" name="name" required autocomplete="off" />
+					<input
+						type="text"
+						name="name"
+						required
+						autocomplete="off"
+						class="name"
+					/>
 					<label for="name" class="label-name">
 						<span class="content-name">Name</span>
 					</label>
 				</div>
 				<div class="input-wrapper">
-					<input type="email" name="email" required autocomplete="off" />
+					<input
+						type="email"
+						name="email"
+						required
+						autocomplete="off"
+						class="email"
+					/>
 					<label for="email" class="label-name">
 						<span class="content-name">Email</span>
 					</label>
 				</div>
+
 				<button class="sign-up-btn">SIGN UP</button>
 			</form>
 		</div>
