@@ -1,0 +1,107 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	background-color: #091921;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: scale(0.8);
+}
+
+*::before,
+*::after {
+	content: "";
+}
+
+/* Clock */
+.clock {
+	background-image: url("./lines.png");
+	background-size: cover;
+	width: 28vmax;
+	height: 28vmax;
+	position: relative;
+	z-index: 1;
+	border: 4px solid #091921;
+	box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+		inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 15px 15px rgba(0, 0, 0, 0.3),
+		inset 0 15px 15px rgba(0, 0, 0, 0.3);
+	border-radius: 50%;
+}
+
+.clock::after {
+	background-color: #3f6ae2;
+	width: 1.3vmax;
+	height: 1.3vmax;
+	margin-top: -0.65vmax;
+	margin-left: -0.65vmax;
+	border-radius: 100%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	mask-image: radial-gradient(circle at center, transparent 33%, black 33.1%);
+}
+
+/* Clock hands */
+.hand {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	width: 100%;
+	padding: 0.5vmax;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	transform-origin: 50% 50%;
+	-webkit-animation: rotation 1s linear infinite;
+	animation: rotation 1s linear infinite;
+}
+.hand::after {
+	background-color: #3f6ae2;
+	border-radius: 200px;
+	width: 11.7vmax;
+	height: 1vmax;
+	margin-left: -0.3vmax;
+}
+.hand::before {
+	background-color: #3f6ae2;
+	height: 0.5vmax;
+	width: 1.7vmax;
+	margin-left: -1.7vmax;
+	display: block;
+}
+.hand.small {
+	-webkit-animation: rotation 3s linear infinite;
+	animation: rotation 3s linear infinite;
+}
+.hand.small::after {
+	width: 6vmax;
+	margin-right: 5.5vmax;
+}
+
+/* Hands animation */
+@-webkit-keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(1turn);
+	}
+}
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(1turn);
+	}
+}
