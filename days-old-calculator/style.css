@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+:root {
+	--wrapper-bg-color: #67d1d3;
+	--main-dark-color: #091921;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+}
+
+.container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--main-dark-color);
+	background-image: url("./pattern.png");
+	font-family: "Montserrat", sans-serif;
+}
+
+.date-wrapper {
+	background-color: var(--wrapper-bg-color);
+	padding: 2em 2.8em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 1em;
+	width: 90%;
+	max-width: 600px;
+	text-align: center;
+}
+
+.title {
+	letter-spacing: 3.5px;
+	margin-bottom: 1em;
+}
+
+#date-input {
+	background-color: var(--wrapper-bg-color);
+	font-size: 1rem;
+	border-radius: 1em;
+	padding: 0.2em 0.5em;
+	margin-top: 0.2em;
+	border: 2px solid var(--main-dark-color);
+}
+
+.calculate-btn,
+.back-btn {
+	font-family: inherit;
+	background-color: inherit;
+	border: 2px solid var(--main-dark-color);
+	color: var(--main-dark-color);
+	margin-top: 2em;
+	padding: 1em 3em;
+	border-radius: 1em;
+	cursor: pointer;
+	font-weight: 600;
+	letter-spacing: 2px;
+}
+
+/* inherit don't work */
+.calculate-btn:hover,
+.back-btn:hover {
+	background-color: var(--main-dark-color);
+	color: var(--wrapper-bg-color);
+	border-color: var(--wrapper-bg-color);
+}
+
+.calculate-btn:focus,
+.back-btn:focus,
+#date-input:focus {
+	outline: none;
+}
+
+.result {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 90%;
+	max-width: 600px;
+	display: none;
+	background-color: var(--wrapper-bg-color);
+	border-radius: 1em;
+	padding: 3em;
+	text-align: center;
+	line-height: 1.5;
+}
+
+.days-old {
+	font-size: 3rem;
+	font-weight: 600;
+}
