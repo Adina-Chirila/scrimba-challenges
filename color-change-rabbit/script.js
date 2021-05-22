@@ -1,8 +1,6 @@
-// const eyesInput = document.querySelector("#eyes-input");
-// const bodyInput = document.querySelector("#body-input");
-// const earsLegsInput = document.querySelector("#ears-and-legs-input");
 const colorInputs = document.querySelectorAll("input");
 const root = document.querySelector(":root");
+const surpriseBtn = document.querySelector("#surprise-btn");
 
 colorInputs.forEach((colorInput) => {
 	colorInput.addEventListener("change", (e) => {
@@ -17,27 +15,17 @@ colorInputs.forEach((colorInput) => {
 	});
 });
 
-//surprise btn
+const generateRandomColors = () => {
+	const randomColorsArr = [];
+	for (let i = 0; i < 3; i++) {
+		const randomColor = `#${Math.floor(Math.random() * 16777216).toString(16)}`;
+		randomColorsArr.push(randomColor);
+	}
+	root.style.setProperty("--eyes-color", randomColorsArr[0]);
+	root.style.setProperty("--primary-color", randomColorsArr[1]);
+	root.style.setProperty("--secondary-color", randomColorsArr[2]);
 
-// const setColor = (e) => {
-// 	const newColor = e.target.value;
-// 	root.style.setProperty("--primary-color", newColor);
-// };
+	console.log(randomColorsArr);
+};
 
-// bodyInput.addEventListener("change", setColor);
-
-// const updatePairElementsColor = (selector, color) => {
-// 	const pairElements = document.querySelectorAll(selector);
-// 	pairElements.forEach((element) => {
-// 		element.style.backgroundColor = color;
-// 	});
-// };
-
-// const updateEyesColor = (e) => {
-// 	const newColor = e.target.value;
-// 	console.log(newColor);
-// 	updatePairElementsColor(".eye-ball", newColor);
-// };
-
-// eyesInput.addEventListener("change", updateEyesColor);
-// bodyInput.addEventListener("change", updateBodyColor);
+surpriseBtn.addEventListener("click", generateRandomColors);
